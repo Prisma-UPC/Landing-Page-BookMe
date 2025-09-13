@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prisma | BookMe - Salón Digital</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;700&amp;family=Noto+Sans:wght@400;700"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .animate-fade-in-down {
+            animation: fade-in-down 1s cubic-bezier(.39, .575, .565, 1.000) both;
+        }
+
+        @keyframes fade-in-down {
+            0% {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-[#e3f0ff] via-[#fafdff] to-[#b3e0ff] min-h-screen"
+    style='font-family: Manrope, "Noto Sans", sans-serif;'>
+    <div class="min-h-screen flex flex-col overflow-x-hidden">
+        <!-- Header -->
+        <header
+            class="flex items-center justify-between border-b border-[#dbeafe] px-8 py-4 bg-white sticky top-0 z-10">
+            <div class="flex items-center gap-3">
+                <span class="size-6 text-[#2563eb] material-symbols-outlined">spa</span>
+                <a href="#"><h2 class="text-2xl font-bold tracking-tight text-[#2563eb]">BookMe</h2></a>
+            </div>
+            <nav class="flex gap-8 items-center">
+                <a class="text-[#2563eb] hover:text-[#38bdf8] font-medium transition-colors"
+                    href="#features">Características</a>
+                <a class="text-[#2563eb] hover:text-[#38bdf8] font-medium transition-colors"
+                    href="#benefits">Beneficios</a>
+                <a class="text-[#2563eb] hover:text-[#38bdf8] font-medium transition-colors"
+                    href="#testimonials">Testimonios</a>
+                <a class="text-[#2563eb] hover:text-[#38bdf8] font-medium transition-colors"
+                    href="#contact">Contacto</a>
+            </nav>
+            <a href="#call-to-action"
+                class="rounded-lg px-5 py-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold transition-colors shadow">Comienza
+                gratis</a>
+        </header>
+        <!-- Hero -->
+        <main class="flex-1">
+            <section class="relative">
+                <div class="flex min-h-[560px] items-center justify-center bg-cover bg-center px-8 md:px-32 pb-20 pt-10"
+                    style='background-image: linear-gradient(to top, rgba(37,99,235,0.10) 0%, rgba(250,253,255,0.95) 100%), url("https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80");'>
+                    <div
+                        class="max-w-2xl flex flex-col gap-6 text-left animate-fade-in-down bg-white/80 backdrop-blur-lg rounded-2xl p-10 shadow-xl">
+                        <h1 class="text-[#2563eb] text-5xl font-extrabold leading-tight">Gestiona tu salón de belleza
+                            <span class="text-[#0a2540]">con tecnología</span></h1>
+                        <p class="text-[#0a2540] text-lg">BookMe conecta clientes y salones en segundos. Digitaliza tu
+                            negocio y lleva la experiencia al siguiente nivel.</p>
+                        <a href="#call-to-action"
+                            class="rounded-lg px-6 py-3 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold transition-colors w-fit shadow">Comienza
+                            gratis</a>
+                        <div class="flex gap-4 mt-4">
+                            <span class="inline-flex items-center gap-2 text-[#2563eb] font-semibold"><span
+                                    class="material-symbols-outlined">bolt</span> Rápido</span>
+                            <span class="inline-flex items-center gap-2 text-[#2563eb] font-semibold"><span
+                                    class="material-symbols-outlined">devices</span> Multiplataforma</span>
+                            <span class="inline-flex items-center gap-2 text-[#2563eb] font-semibold"><span
+                                    class="material-symbols-outlined">security</span> Seguro</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About -->
+            <section id="about" class="px-8 md:px-32 py-16 bg-white">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl font-extrabold text-[#2563eb] mb-4">¿Qué es BookMe?</h2>
+                    <p class="text-[#0a2540] text-lg">BookMe es una aplicación web moderna que transforma la gestión de
+                        citas y servicios en salones de belleza. Nuestra misión es democratizar la tecnología en el
+                        sector, ayudando a negocios a crecer y a clientes a reservar en segundos.</p>
+                </div>
+            </section>
+            <!-- Features Carousel -->
+            <section id="features"
+                class="px-8 md:px-32 py-16 bg-gradient-to-r from-[#e0f2fe] via-[#fafdff] to-[#bae6fd]">
+                <div class="max-w-6xl mx-auto overflow-hidden" x-data="slider()" x-init="startAutoSlide()">
+                    <h2 class="text-4xl font-extrabold text-[#2563eb] text-center mb-12">Características principales
+                    </h2>
+                    <div class="relative w-full">
+                        <div class="flex transition-transform duration-700 ease-in-out"
+                            :style="`transform: translateX(-${active * (100/3)}%)`">
+                            <template x-for="(feature, idx) in features.concat(features)" :key="idx">
+                                <div class="flex-shrink-0 w-full md:w-1/3 px-2">
+                                    <div class="flex flex-col gap-4 rounded-2xl border border-[#bae6fd] bg-white/90 backdrop-blur-lg p-8 shadow-xl items-center h-full">
+                                        <span class="material-symbols-outlined text-[#2563eb] text-5xl"
+                                            x-text="feature.icon"></span>
+                                        <h3 class="text-xl font-bold text-[#2563eb]" x-text="feature.title"></h3>
+                                        <p class="text-[#0a2540] text-center" x-text="feature.desc"></p>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Benefits -->
+            <section id="benefits" class="px-8 md:px-32 py-16 bg-white">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-4xl font-extrabold text-[#2563eb] text-center mb-12">Beneficios para tu salón</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div
+                            class="flex flex-col items-center gap-4 p-8 rounded-xl shadow bg-gradient-to-br from-[#e0f2fe] to-[#bae6fd]">
+                            <span class="material-symbols-outlined text-[#2563eb] text-4xl">trending_up</span>
+                            <h3 class="text-xl font-bold text-[#2563eb]">Crecimiento</h3>
+                            <p class="text-[#0a2540] text-center">Atrae más clientes y aumenta tus ingresos con una
+                                plataforma digital.</p>
+                        </div>
+                        <div
+                            class="flex flex-col items-center gap-4 p-8 rounded-xl shadow bg-gradient-to-br from-[#fafdff] to-[#bae6fd]">
+                            <span class="material-symbols-outlined text-[#2563eb] text-4xl">schedule</span>
+                            <h3 class="text-xl font-bold text-[#2563eb]">Optimización de tiempo</h3>
+                            <p class="text-[#0a2540] text-center">Reduce la fricción en la gestión diaria de citas y
+                                servicios.</p>
+                        </div>
+                        <div
+                            class="flex flex-col items-center gap-4 p-8 rounded-xl shadow bg-gradient-to-br from-[#e0f2fe] to-[#fafdff]">
+                            <span class="material-symbols-outlined text-[#2563eb] text-4xl">star</span>
+                            <h3 class="text-xl font-bold text-[#2563eb]">Experiencia premium</h3>
+                            <p class="text-[#0a2540] text-center">Ofrece a tus clientes una experiencia moderna y
+                                personalizada.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonials -->
+            <section id="testimonials"
+                class="px-8 md:px-32 py-16 bg-gradient-to-r from-[#e0f2fe] via-[#fafdff] to-[#bae6fd]">
+                <div class="max-w-6xl mx-auto overflow-hidden" x-data="testimonialsSlider()" x-init="startAutoSlide()">
+                    <h2 class="text-4xl font-extrabold text-[#2563eb] text-center mb-12">Testimonios</h2>
+                    <div class="relative w-full">
+                        <div class="flex transition-transform duration-700 ease-in-out"
+                            :style="`transform: translateX(-${active * (100/3)}%)`">
+                            <template x-for="(testimonial, idx) in testimonials.concat(testimonials)" :key="idx">
+                                <div class="flex-shrink-0 w-full md:w-1/3 px-2">
+                                    <div class="flex flex-col gap-4 rounded-2xl border border-[#bae6fd] bg-white/90 backdrop-blur-lg p-8 shadow-xl items-center h-full">
+                                        <img :src="testimonial.img" :alt="testimonial.name"
+                                            class="w-16 h-16 rounded-full object-cover border-2 border-[#2563eb]">
+                                        <blockquote class="text-lg font-medium text-[#0a2540] text-center"
+                                            x-text="testimonial.text"></blockquote>
+                                        <p class="text-[#2563eb] font-bold" x-text="testimonial.name"></p>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Call to Action -->
+            <section id="call-to-action" class="px-8 md:px-32 py-16 bg-white">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-4xl font-extrabold text-[#2563eb] text-center mb-8">¡Únete a la revolución!</h2>
+                    <p class="text-[#0a2540] text-lg mb-12 text-center">Elige el plan que mejor se adapte a tu salón y comienza a transformar tu negocio.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Gratis -->
+                        <div class="flex flex-col gap-4 rounded-2xl border border-[#bae6fd] bg-[#e0f2fe] p-8 shadow items-center">
+                            <span class="material-symbols-outlined text-[#2563eb] text-5xl">workspace_premium</span>
+                            <h3 class="text-2xl font-bold text-[#2563eb]">Gratis</h3>
+                            <p class="text-[#0a2540] text-center">Ideal para salones pequeños que quieren digitalizar sus reservas sin costo inicial.</p>
+                            <ul class="text-[#2563eb] text-left mb-4 list-disc list-inside">
+                                <li>Gestión básica de citas</li>
+                                <li>Notificaciones por email</li>
+                                <li>Soporte limitado</li>
+                            </ul>
+                            <a href="#contact" class="rounded-lg px-6 py-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold transition-colors shadow">Comenzar gratis</a>
+                        </div>
+                        <!-- Pro -->
+                        <div class="flex flex-col gap-4 rounded-2xl border border-[#bae6fd] bg-white p-8 shadow items-center">
+                            <span class="material-symbols-outlined text-[#2563eb] text-5xl">star_rate</span>
+                            <h3 class="text-2xl font-bold text-[#2563eb]">Pro</h3>
+                            <p class="text-[#0a2540] text-center">Para salones en crecimiento que buscan más herramientas y personalización.</p>
+                            <ul class="text-[#2563eb] text-left mb-4 list-disc list-inside">
+                                <li>Gestión avanzada de citas</li>
+                                <li>Recordatorios SMS</li>
+                                <li>Reportes y analíticas</li>
+                                <li>Soporte prioritario</li>
+                            </ul>
+                            <a href="#contact" class="rounded-lg px-6 py-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold transition-colors shadow">Solicitar demo Pro</a>
+                        </div>
+                        <!-- Premium -->
+                        <div class="flex flex-col gap-4 rounded-2xl border border-[#bae6fd] bg-[#fafdff] p-8 shadow items-center">
+                            <span class="material-symbols-outlined text-[#2563eb] text-5xl">diamond</span>
+                            <h3 class="text-2xl font-bold text-[#2563eb]">Premium</h3>
+                            <p class="text-[#0a2540] text-center">La solución completa para cadenas y franquicias con necesidades avanzadas.</p>
+                            <ul class="text-[#2563eb] text-left mb-4 list-disc list-inside">
+                                <li>Multi-sucursal y staff</li>
+                                <li>Integraciones personalizadas</li>
+                                <li>Soporte dedicado</li>
+                                <li>Automatización avanzada</li>
+                            </ul>
+                            <a href="#contact" class="rounded-lg px-6 py-2 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold transition-colors shadow">Solicitar demo Premium</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact -->
+            <section id="contact"
+                class="px-8 md:px-32 py-16 bg-gradient-to-r from-[#e0f2fe] via-[#fafdff] to-[#bae6fd]">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl font-extrabold text-[#2563eb] mb-4">Contacto</h2>
+                    <p class="text-[#0a2540] text-lg mb-8">¿Tienes preguntas o necesitas más información? ¡Estamos aquí
+                        para ayudarte!</p>
+                    <form action="#" method="POST"
+                        class="flex flex-col gap-4 bg-white/90 backdrop-blur-lg p-8 rounded-xl shadow">
+                        <input type="text" name="name" placeholder="Tu nombre" required
+                            class="px-4 py-2 border border-[#bae6fd] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]" />
+                        <input type="email" name="email" placeholder="Tu email" required
+                            class="px-4 py-2 border border-[#bae6fd] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]" />
+                        <textarea name="message" rows="4" placeholder="Tu mensaje" required
+                            class="px-4 py-2 border border-[#bae6fd] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"></textarea>
+                        <button type="submit"
+                            class="rounded-lg px-6 py-3 bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-bold transition-colors w-fit mx-auto shadow">Enviar
+                            mensaje</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="bg-[#2563eb] text-white py-10">
+            <div class="max-w-6xl mx-auto px-8 md:px-0">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="flex flex-col gap-2">
+                        <h2 class="text-3xl font-extrabold">BookMe</h2>
+                        <p class="text-[#bae6fd] max-w-md">Revoluciona la gestión de tu salón de belleza con nuestra
+                            plataforma innovadora.</p>
+                    </div>
+                    <div class="flex gap-6 mt-4 md:mt-0">
+                        <a href="#" class="text-[#bae6fd] hover:text-white transition-colors"><span
+                                class="material-symbols-outlined align-middle">language</span> Web</a>
+                        <a href="#" class="text-[#bae6fd] hover:text-white transition-colors"><span
+                                class="material-symbols-outlined align-middle">mail</span> Email</a>
+                        <a href="#" class="text-[#bae6fd] hover:text-white transition-colors"><span
+                                class="material-symbols-outlined align-middle">share</span> Redes</a>
+                    </div>
+                </div>
+                <div class="text-center text-[#bae6fd] mt-8 text-sm">© 2025 Prisma. Todos los derechos reservados.</div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function testimonialsCarousel() {
+            return {
+                active: 0,
+                testimonials: [
+                    {
+                        img: "https://randomuser.me/api/portraits/women/44.jpg",
+                        text: "“BookMe ha transformado la eficiencia de nuestro salón. ¡Nuestros clientes aman la facilidad de reserva!”",
+                        name: "Sarah, Dueña de salón"
+                    },
+                    {
+                        img: "https://randomuser.me/api/portraits/men/32.jpg",
+                        text: "“La gestión de clientes nunca fue tan sencilla. BookMe nos ayuda a crecer cada mes.”",
+                        name: "David, Gerente"
+                    },
+                    {
+                        img: "https://randomuser.me/api/portraits/women/65.jpg",
+                        text: "“Las analíticas de BookMe nos permiten entender mejor a nuestros clientes y mejorar el servicio.”",
+                        name: "Emily, Dueña de salón"
+                    }
+                ],
+                interval: null,
+                startAutoSlide() {
+                    this.interval = setInterval(() => {
+                        this.active = (this.active + 1) % this.testimonials.length;
+                    }, 3500);
+                },
+                stopAutoSlide() {
+                    clearInterval(this.interval);
+                }
+            }
+        }
+
+        function slider() {
+            return {
+                active: 0,
+                features: [
+                    { icon: 'calendar_month', title: 'Reservas rápidas', desc: 'Agenda citas en segundos desde cualquier dispositivo.' },
+                    { icon: 'group', title: 'Gestión inteligente', desc: 'Administra servicios, horarios y clientes con facilidad.' },
+                    { icon: 'notifications', title: 'Notificaciones automáticas', desc: 'Recibe recordatorios y confirma citas en tiempo real.' },
+                    { icon: 'monitoring', title: 'Analíticas y reportes', desc: 'Obtén información clave para hacer crecer tu negocio.' }
+                ],
+                startAutoSlide() {
+                    setInterval(() => {
+                        this.active = (this.active + 1) % this.features.length;
+                    }, 3500);
+                }
+            }
+        }
+
+        function testimonialsSlider() {
+            return {
+                active: 0,
+                testimonials: [
+                    {
+                        img: "https://randomuser.me/api/portraits/women/44.jpg",
+                        text: "“BookMe ha transformado la eficiencia de nuestro salón. ¡Nuestros clientes aman la facilidad de reserva!”",
+                        name: "Sarah, Dueña de salón"
+                    },
+                    {
+                        img: "https://randomuser.me/api/portraits/men/32.jpg",
+                        text: "“La gestión de clientes nunca fue tan sencilla. BookMe nos ayuda a crecer cada mes.”",
+                        name: "David, Gerente"
+                    },
+                    {
+                        img: "https://randomuser.me/api/portraits/women/65.jpg",
+                        text: "“Las analíticas de BookMe nos permiten entender mejor a nuestros clientes y mejorar el servicio.”",
+                        name: "Emily, Dueña de salón"
+                    }
+                ],
+                startAutoSlide() {
+                    setInterval(() => {
+                        this.active = (this.active + 1) % this.testimonials.length;
+                    }, 3500);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
